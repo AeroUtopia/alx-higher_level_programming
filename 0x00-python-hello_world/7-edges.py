@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-str = "Holberton School"
+str = "Holberton"
 first_3_str = str[0:3]
 last_2_str = str[-2:]
 middle_str = str[1:-1]
