@@ -1,4 +1,9 @@
 #!/usr/bin/python3
-def add_num(a,b):#function for addition
-    return a+b  #return value
-print(add_num(1,2))#call the function
+
+if __name__ == "__main__":
+    from add_0 import add
+
+    a = 1
+    b = 2
+
+    print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
