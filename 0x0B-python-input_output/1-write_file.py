@@ -1,9 +1,15 @@
 #!/usr/bin/python3
-'''Python Function to write text to file and
-   returns number of characters written
-'''
+"""Write to a file
+"""
 
 
 def write_file(filename="", text=""):
-    with open(filename, 'w', encoding='utf-8') as f:
-        return f.write(text)
+    """Writes text to filename
+    Args:
+        filename (str): filename/filepath
+        text (str): text to write
+    """
+    if type(filename) is str and type(text) is str:
+        with open(filename, 'w') as fyle:
+            count = fyle.write(text)
+    return count
