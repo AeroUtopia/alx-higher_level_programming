@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+"""deserializes JSON document to Python object
 """
-Python function that returns an object from JSON
-"""
-
-
 import json
 
 
 def from_json_string(my_str):
+    """Converts my_str string from JSON document to python object
+    Args:
+        my_str (str): JSON document string
+    """
     return json.loads(my_str)
