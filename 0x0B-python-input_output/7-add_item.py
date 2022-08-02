@@ -1,18 +1,20 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    from sys import argv
-    load = __import__('8-load_from_json_file').load_from_json_file
-    save = __import__('7-save_to_json_file').save_to_json_file
-    filename = "add_item.json"
-    try:
-        data = load(filename)
-        for i in range(len(argv)):
-            if i != 0:
-                data.append(argv[i])
-        save(data, filename)
-    except FileNotFoundError:
-        data = []
-        for i in range(len(argv)):
-            if i != 0:
-                data.append(argv[i])
-        save(data, filename)
+"""Module for saving to json"""
+import json
+import os.path
+import sys
+from sys import argv
+
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+
+filename = "add_item.json"
+json_list = []
+
+if os.path.exists(filename):
+    json_list = load_from_json_file(filename)
+
+for index in argv[1:]:
+    json_list.append(index)
+
+save_to_json_file(json_list, filename)
