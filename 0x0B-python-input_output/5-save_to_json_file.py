@@ -1,12 +1,12 @@
 #!/usr/bin/python3
+"""deserializes JSON document to Python object
 """
-Python Function that writs an object to a file
-Using JSON representation
-"""
-
 import json
 
 
-def save_to_json_file(my_obj, filename):
-    with open(filename, 'w', encoding='utf-8') as f:
-        f.write(json.dumps(my_obj))
+def from_json_string(my_str):
+    """Converts my_str string from JSON document to python object
+    Args:
+        my_str (str): JSON document string
+    """
+    return json.loads(my_str)
