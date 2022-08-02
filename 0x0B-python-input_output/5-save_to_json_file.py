@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-"""deserializes JSON document to Python object
+"""Save python object to file in JSON format
 """
 import json
 
 
-def from_json_string(my_str):
-    """Converts my_str string from JSON document to python object
+def save_to_json_file(my_obj, filename):
+    """Converts Python object to JSON format and writes it to a text file
     Args:
-        my_str (str): JSON document string
+        my_obj (obj): object to convert
+        filename (str): filename/filepath
     """
-    return json.loads(my_str)
+    if type(filename) is str:
+        with open(filename, 'w') as fyle:
+            json.dump(my_obj, fyle)
