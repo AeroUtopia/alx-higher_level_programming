@@ -1,9 +1,15 @@
 #!/usr/bin/python3
-""" Python function that creates an Object from a JSON file"""
-
+"""Reads in JSON file and converts to a python object
+"""
 import json
 
 
 def load_from_json_file(filename):
-    with open(filename, 'r', encoding='utf-8') as f:
-        return json.load(f)
+    """Reads in JSON document from a text file and deserializes it into a
+       python object
+    Args:
+        filename (str): filename/filepath
+    """
+    if type(filename) is str:
+        with open(filename, 'r') as fyle:
+            return json.load(fyle)
